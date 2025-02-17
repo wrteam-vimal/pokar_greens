@@ -1,0 +1,29 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "egrocer-457a9",
+          "appId": "1:755773183987:android:12a08c1d6852260093e486",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "egrocer-457a9",
+          "appId": "1:755773183987:ios:cc6ea6da67f7210593e486",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "egrocer-457a9",
+          "configurations": {
+            "android": "1:755773183987:android:12a08c1d6852260093e486"
+          }
+        }
+      }
+    }
+  }
+}
