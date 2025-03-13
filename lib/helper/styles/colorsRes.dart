@@ -2,27 +2,27 @@ import 'package:project/helper/utils/generalImports.dart';
 
 class ColorsRes {
   static MaterialColor appColor = const MaterialColor(
-    0xff55AE7B,
+    0xff01B04A,
     <int, Color>{
-      50: Color(0xff55AE7B),
-      100: Color(0xff55AE7B),
-      200: Color(0xff55AE7B),
-      300: Color(0xff55AE7B),
-      400: Color(0xff55AE7B),
-      500: Color(0xff55AE7B),
-      600: Color(0xff55AE7B),
-      700: Color(0xff55AE7B),
-      800: Color(0xff55AE7B),
-      900: Color(0xff55AE7B),
+      50: Color(0xff01B04A),
+      100: Color(0xff01B04A),
+      200: Color(0xff01B04A),
+      300: Color(0xff01B04A),
+      400: Color(0xff01B04A),
+      500: Color(0xff01B04A),
+      600: Color(0xff01B04A),
+      700: Color(0xff01B04A),
+      800: Color(0xff01B04A),
+        900: Color(0xff01B04A),
     },
   );
 
   static Color appColorLight = const Color(0xffe1ffeb);
-  static Color appColorLightHalfTransparent = const Color(0x2655AE7B);
-  static Color appColorDark = const Color(0xff3d8c68);
+  static Color appColorLightHalfTransparent = const Color(0x2601B04A);
+  static Color appColorDark = const Color(0xff01B04A);
 
-  static Color gradient1 = const Color(0xff78c797);
-  static Color gradient2 = const Color(0xff55AE7B);
+  static Color gradient1 = const Color(0xff01B04A);
+  static Color gradient2 = const Color(0xff01B04A);
 
   static Color defaultPageInnerCircle = const Color(0x1A999999);
   static Color defaultPageOuterCircle = const Color(0x0d999999);

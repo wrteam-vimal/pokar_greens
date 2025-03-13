@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>755773183987-gb631n782l7v6lt2fu1vele74o57qr5f.apps.googleusercontent.com</string>
+	<string>751439789472-emdufmbgpuphe2tu11au02etha15i94q.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.755773183987-gb631n782l7v6lt2fu1vele74o57qr5f</string>
+	<string>com.googleusercontent.apps.751439789472-emdufmbgpuphe2tu11au02etha15i94q</string>
 	<key>ANDROID_CLIENT_ID</key>
-	<string>755773183987-2d41j1vvm2gmj7knh3bdavqetbaoimrk.apps.googleusercontent.com</string>
+	<string>751439789472-81jrntmldmmjtgsem47cvph0b3ubr7pr.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBlfqs5K9HEe9c1Eu5bjPXXjr8Hz2mbTZE</string>
+	<string>AIzaSyDsO3pkXp7X51pcvzifYvbViSaXl8_Rycc</string>
 	<key>GCM_SENDER_ID</key>
-	<string>755773183987</string>
+	<string>751439789472</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.wrteam.egrocer</string>
+	<string>com.pokargreens.customer</string>
 	<key>PROJECT_ID</key>
-	<string>egrocer-457a9</string>
+	<string>pokar-food-service-pvt-ltd</string>
 	<key>STORAGE_BUCKET</key>
-	<string>egrocer-457a9.appspot.com</string>
+	<string>pokar-food-service-pvt-ltd.firebasestorage.app</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +31,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:755773183987:ios:cc6ea6da67f7210593e486</string>
+	<string>1:751439789472:ios:a4d71e77bf62f5c77c38c5</string>
 </dict>
 </plist>

@@ -31,7 +31,7 @@ class OrderInvoiceWidget extends StatelessWidget {
                       final appDocDirPath = io.Platform.isAndroid
                           ? (await ExternalPath
                               .getExternalStoragePublicDirectory(
-                                  ExternalPath.DIRECTORY_DOWNLOADS))
+                                  ExternalPath.DIRECTORY_DOWNLOAD))
                           : (await getApplicationDocumentsDirectory()).path;
 
                       final targetFileName =

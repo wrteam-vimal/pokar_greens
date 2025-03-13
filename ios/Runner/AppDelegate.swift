@@ -20,7 +20,7 @@ import FirebaseCore
         }
 
         // Initialize Google Maps
-        GMSServices.provideAPIKey("AIzaSyBlfqs5K9HEe9c1Eu5bjPXXjr8Hz2mbTZE")
+        GMSServices.provideAPIKey("AIzaSyDv4wCwczMMTsbLqXvftfz6NBRgzG5Z6sk")
 
         // Register Flutter plugins only once
         let registry = self as FlutterPluginRegistry

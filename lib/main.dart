@@ -33,9 +33,6 @@ void main() async {
   runApp(
     MultiProvider(
       providers: [
-        ChangeNotifierProvider<DeepLinkProvider>(
-          create: (context) => DeepLinkProvider(),
-        ),
         ChangeNotifierProvider<CartProvider>(
           create: (context) => CartProvider(),
         ),
@@ -191,7 +188,7 @@ class MyAppState extends State<MyApp> {
                   initialRoute: "/",
                   scrollBehavior: ScrollGlowBehavior(),
                   debugShowCheckedModeBanner: false,
-                  title: "egrocer",
+                  title: "Pokar Greens",
                   theme: ColorsRes.setAppTheme().copyWith(
                     textTheme:
                         GoogleFonts.latoTextTheme(Theme.of(context).textTheme),

@@ -111,9 +111,7 @@ class HomeMainScreenState extends State<HomeMainScreen> {
           }
         }
       },
-    ).then((value) {
-      context.read<DeepLinkProvider>().getDeepLinkRedirection(context: context);
-    });
+    );
 
     super.initState();
   }

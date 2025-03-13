@@ -3,8 +3,6 @@ export 'dart:convert';
 export 'dart:io';
 export 'dart:math';
 export 'dart:typed_data';
-
-export 'package:app_links/app_links.dart';
 export 'package:awesome_notifications/awesome_notifications.dart';
 export 'package:cached_network_image/cached_network_image.dart';
 export 'package:connectivity_plus/connectivity_plus.dart';
@@ -122,7 +120,6 @@ export 'package:project/provider/checkoutProvider.dart';
 export 'package:project/provider/cityByLatLongProvider.dart';
 export 'package:project/provider/countryProvider.dart';
 export 'package:project/provider/currentOrderProvider.dart';
-export 'package:project/provider/deepLinkProvider.dart';
 export 'package:project/provider/faqListProvider.dart';
 export 'package:project/provider/homeMainScreenProvider.dart';
 export 'package:project/provider/homeScreenDataProvider.dart';

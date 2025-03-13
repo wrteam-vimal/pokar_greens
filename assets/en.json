@@ -1,5 +1,5 @@
 {
-  "app_name": "eGrocer",
+  "app_name": "Pokar Greens",
   "intro_title_1": "Set Your Delivery Location for Speedy Grocery Delivery.",
   "intro_title_2": "Discover Fresh Finds. Fill Your Cart with Everything You Need.",
   "intro_title_3": "Your Groceries Await Freshness Delivered to Your Doorstep.",
@@ -14,7 +14,7 @@
   "phone_number": "Phone Number",
   "apple": "Apple",
   "google": "Google",
-  "agreement_message_1": "By continuing, you agree to eGrocer's",
+  "agreement_message_1": "By continuing, you agree to Pokar Greens's",
   "terms_of_service": "Terms of Service",
   "privacy_policy": "Privacy Policy",
   "policies": "Policies",
@@ -144,8 +144,8 @@
   "cancellation_policy": "Cancellation Policy",
   "go_to_product": "Go to product",
   "go_to_category": "Go to category",
-  "share_app_message": "Take a Look at eGrocer \n",
-  "refer_and_earn_share_prefix_message": "I have earned money using eGrocer app.\nYou can also earn money by downloading app from given link\nDon't forgot to enter referral code while registration -",
+  "share_app_message": "Take a Look at Pokar Greens \n",
+  "refer_and_earn_share_prefix_message": "I have earned money using Pokar Greens app.\nYou can also earn money by downloading app from given link\nDon't forgot to enter referral code while registration -",
   "refer_and_earn_share_display_message_1_prefix": "Refer a friend and earn up to",
   "refer_and_earn_share_display_message_1_postfix": "when your friend's first order is successfully delivered.",
   "refer_and_earn_share_display_message_2": "Minimum order amount should be",
@@ -501,6 +501,9 @@
   "please_allow_camera_permission_to_scan_qr_code":"Please allow camera permission to scan QR code.",
   "sorry_we_are_not_delivering_on_selected_address": "Sorry We are not delivering on selected address",
   "items_not_available": "Some items are may not available!",
-  "is_from_disabled_seller": "Some items are may not available!"
+  "is_from_disabled_seller": "Some items are may not available!",
+  "choose_location": "Choose location",
+  "add_address": "Add Address",
+  "saved_address": "SAVED ADDRESS"
 
 }

@@ -52,9 +52,7 @@ class _SplashScreenState
       (value) async {
         await LocalAwesomeNotification().requestNotificationPermission(context);
 
-        context.read<DeepLinkProvider>().getDeepLinkProvider().then((value) {
-          callAllApis();
-        });
+        callAllApis();
       },
     );
   }
@@ -358,7 +356,7 @@ class _SplashScreenState
                       maxWidth: 150,
                     ),
                     child: defaultImg(
-                      image: 'logo',
+                      image: 'logo.png',
                     ),
                   ),
                 ),

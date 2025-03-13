@@ -81,7 +81,7 @@ List getHomeBottomNavigationBarIcons({required bool isActive}) {
 Widget setNetworkImg({
   double? height,
   double? width,
-  String image = "placeholder",
+  String image = "placeholder.png",
   Color? iconColor,
   BoxFit? boxFit,
   BorderRadius? borderRadius,
@@ -92,7 +92,7 @@ Widget setNetworkImg({
 
   return image.trim().isEmpty
       ? defaultImg(
-          image: "placeholder",
+          image: "placeholder.png",
           height: height,
           width: width,
           boxFit: boxFit,
@@ -113,7 +113,7 @@ Widget setNetworkImg({
             width: width,
             fit: boxFit,
             placeholder: (context, url) => defaultImg(
-              image: "placeholder",
+              image: "placeholder.png",
               boxFit: boxFit,
             ),
           ),

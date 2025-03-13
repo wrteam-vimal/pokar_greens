@@ -8,14 +8,14 @@ class Constant {
   //Add your admin panel url here with postfix slash eg. https://www.admin.panel/
   // TODO ADMIN PANEL URL HERE
   // static String hostUrl = "https://egrocer.wrteam.me/";
-  static String hostUrl = "https://egrocer.thewrteam.in/";
+  static String hostUrl = "https://admin.pokargreens.com/";
 
   // ADD WEBSITE URL OR ADMIN PANEL URL HERE
-  static String websiteUrl = "https://egrocerweb.wrteam.me/";
+  static String websiteUrl = "https://admin.pokargreens.com/";
 
   static String baseUrl = "${hostUrl}customer/";
 
-  static String packageName = "com.wrteam.egrocer";
+  static String packageName = "com.pokargreens.customer";
 
   // TODO IOS APP URL HERE
   static String appStoreUrl = "";

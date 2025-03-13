@@ -1,106 +1,56 @@
 {
   "project_info": {
-    "project_number": "755773183987",
-    "project_id": "egrocer-457a9",
-    "storage_bucket": "egrocer-457a9.appspot.com"
+    "project_number": "751439789472",
+    "project_id": "pokar-food-service-pvt-ltd",
+    "storage_bucket": "pokar-food-service-pvt-ltd.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:755773183987:android:12a08c1d6852260093e486",
+        "mobilesdk_app_id": "1:751439789472:android:79ceabd50018cfb67c38c5",
         "android_client_info": {
-          "package_name": "com.wrteam.egrocer"
+          "package_name": "com.pokargreens.customer"
         }
       },
       "oauth_client": [
         {
-          "client_id": "755773183987-2d41j1vvm2gmj7knh3bdavqetbaoimrk.apps.googleusercontent.com",
+          "client_id": "751439789472-81jrntmldmmjtgsem47cvph0b3ubr7pr.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.wrteam.egrocer",
-            "certificate_hash": "d017fdab548ee409d33e408bd58ae7e399804520"
+            "package_name": "com.pokargreens.customer",
+            "certificate_hash": "ae4e9fb7297bd3f5776b3d9ed0eb5a504e36fcf5"
           }
         },
         {
-          "client_id": "755773183987-etjt9kko4i8j0l1gteo4eb3jmqdqfk34.apps.googleusercontent.com",
+          "client_id": "751439789472-ghkjtd7j69emgv10lo6lkiulihp38gc3.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.wrteam.egrocer",
-            "certificate_hash": "11420650d4f8373c6a74cba96c28406d7a54e331"
+            "package_name": "com.pokargreens.customer",
+            "certificate_hash": "cba79e492065a82848024e6cd00478ee83a8c81c"
           }
         },
         {
-          "client_id": "755773183987-0e82nfa5f66603uhr1f2ge56nneaatde.apps.googleusercontent.com",
+          "client_id": "751439789472-deme6kilqadj07k784dq72eul69vrb1h.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC_9cAGZnlvSGLKRUMCxIgteTpaMvE83oY"
-        },
-        {
-          "current_key": "AIzaSyB1b0iilOLODpZ6Sw-aUhw4KTTMBOpqXTU"
+          "current_key": "AIzaSyCd35b6M5XB_UtaIcp0uMKSw1IalztMIwE"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "755773183987-0e82nfa5f66603uhr1f2ge56nneaatde.apps.googleusercontent.com",
+              "client_id": "751439789472-deme6kilqadj07k784dq72eul69vrb1h.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "755773183987-gb631n782l7v6lt2fu1vele74o57qr5f.apps.googleusercontent.com",
+              "client_id": "751439789472-emdufmbgpuphe2tu11au02etha15i94q.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.wrteam.egrocer"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:755773183987:android:41f2f290562804ec93e486",
-        "android_client_info": {
-          "package_name": "com.wrteam.egrocer.seller"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "755773183987-lbur2s944afpdsgqsmb3rm0j5j6qd95k.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.wrteam.egrocer.seller",
-            "certificate_hash": "d017fdab548ee409d33e408bd58ae7e399804520"
-          }
-        },
-        {
-          "client_id": "755773183987-0e82nfa5f66603uhr1f2ge56nneaatde.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyC_9cAGZnlvSGLKRUMCxIgteTpaMvE83oY"
-        },
-        {
-          "current_key": "AIzaSyB1b0iilOLODpZ6Sw-aUhw4KTTMBOpqXTU"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "755773183987-0e82nfa5f66603uhr1f2ge56nneaatde.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "755773183987-gb631n782l7v6lt2fu1vele74o57qr5f.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.wrteam.egrocer"
+                "bundle_id": "com.pokargreens.customer"
               }
             }
           ]

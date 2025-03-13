@@ -50,23 +50,22 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyC_9cAGZnlvSGLKRUMCxIgteTpaMvE83oY',
-    appId: '1:755773183987:android:12a08c1d6852260093e486',
-    messagingSenderId: '755773183987',
-    projectId: 'egrocer-457a9',
-    storageBucket: 'egrocer-457a9.appspot.com',
+    apiKey: 'AIzaSyCd35b6M5XB_UtaIcp0uMKSw1IalztMIwE',
+    appId: '1:751439789472:android:79ceabd50018cfb67c38c5',
+    messagingSenderId: '751439789472',
+    projectId: 'pokar-food-service-pvt-ltd',
+    storageBucket: 'pokar-food-service-pvt-ltd.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBlfqs5K9HEe9c1Eu5bjPXXjr8Hz2mbTZE',
-    appId: '1:755773183987:ios:cc6ea6da67f7210593e486',
-    messagingSenderId: '755773183987',
-    projectId: 'egrocer-457a9',
-    storageBucket: 'egrocer-457a9.appspot.com',
-    androidClientId:
-        '755773183987-2d41j1vvm2gmj7knh3bdavqetbaoimrk.apps.googleusercontent.com',
-    iosClientId:
-        '755773183987-gb631n782l7v6lt2fu1vele74o57qr5f.apps.googleusercontent.com',
-    iosBundleId: 'com.wrteam.egrocer',
+    apiKey: 'AIzaSyDsO3pkXp7X51pcvzifYvbViSaXl8_Rycc',
+    appId: '1:751439789472:ios:a4d71e77bf62f5c77c38c5',
+    messagingSenderId: '751439789472',
+    projectId: 'pokar-food-service-pvt-ltd',
+    storageBucket: 'pokar-food-service-pvt-ltd.firebasestorage.app',
+    androidClientId: '751439789472-81jrntmldmmjtgsem47cvph0b3ubr7pr.apps.googleusercontent.com',
+    iosClientId: '751439789472-emdufmbgpuphe2tu11au02etha15i94q.apps.googleusercontent.com',
+    iosBundleId: 'com.pokargreens.customer',
   );
+
 }

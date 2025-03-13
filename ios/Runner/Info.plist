@@ -7,7 +7,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>eGrocer</string>
+	<string>Pokar Greens</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleGetInfoString</key>
@@ -17,7 +17,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>eGrocer</string>
+	<string>Pokar Greens</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -32,7 +32,7 @@
 			<key>CFBundleURLSchemes</key>
 			<!-- TODO REVERSED_CLIENT_ID HERE -->
 			<array>
-				<string>com.googleusercontent.apps.755773183987-gb631n782l7v6lt2fu1vele74o57qr5f</string>
+				<string>com.googleusercontent.apps.751439789472-emdufmbgpuphe2tu11au02etha15i94q</string>
 			</array>
 		</dict>
 	</array>

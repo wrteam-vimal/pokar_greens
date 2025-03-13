@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:project/helper/utils/generalImports.dart';
-
+import 'package:project/screens/confirmLocationScreen/widget/selectLocationAddressScreen.dart';
 
 const String introSliderScreen = 'introSliderScreen';
 const String splashScreen = 'splashScreen';
@@ -46,12 +46,34 @@ const String paytabsPaymentScreen = 'paytabsPaymentScreen';
 const String walletRechargeScreen = 'walletRechargeScreen';
 const String ratingImageViewScreen = 'ratingImageViewScreen';
 const String barCodeScanner = 'barCodeScanner';
+const String selectLocationAddress = 'selectLocationAddress';
 
 String currentRoute = splashScreen;
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     currentRoute = settings.name ?? "";
+    if (currentRoute.contains("/product/")) {
+      String deeplinkUrl = currentRoute;
+      final itemSlug = deeplinkUrl.split("/").last;
+
+      return CupertinoPageRoute(
+        builder: (_) => MultiProvider(
+          providers: [
+            ChangeNotifierProvider<ProductDetailProvider>(
+              create: (context) => ProductDetailProvider(),
+            ),
+            ChangeNotifierProvider<RatingListProvider>(
+              create: (context) => RatingListProvider(),
+            ),
+          ],
+          child: ProductDetailScreen(
+            id: itemSlug.toString(),
+            title: getTranslatedValue(navigatorKey.currentContext!, "app_name"),
+          ),
+        ),
+      );
+    }
 
     switch (settings.name) {
       case introSliderScreen:
@@ -117,6 +139,18 @@ class RouteGenerator {
             from: confirmLocationArguments[1] as String,
           ),
         );
+
+      case selectLocationAddress:
+        /*  List<dynamic> selectLocationAddressArguments =
+            settings.arguments as List<dynamic>;*/
+        return CupertinoPageRoute(
+            builder: (_) => ChangeNotifierProvider<AddressProvider>(
+                  create: (context) => AddressProvider(),
+                  child: SelectLocationAddressScreen(
+                      /* address: confirmLocationArguments[0],
+            from: confirmLocationArguments[1] as String,*/
+                      ),
+                ));
 
       case mainHomeScreen:
         return CupertinoPageRoute(

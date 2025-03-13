@@ -93,7 +93,7 @@ class WalletRechargeButtonWidgetState
         logo: defaultImg(
           height: 50,
           width: 50,
-          image: "logo",
+          image: "logo.png",
           requiredRTL: false,
         ),
         method: CheckoutMethod.card,

@@ -7,7 +7,11 @@ class DeliveryAddressWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, confirmLocationScreen,
+        Navigator.pushNamed(
+          context,
+          selectLocationAddress,
+        ).then((value) async {});
+        /* Navigator.pushNamed(context, confirmLocationScreen,
             arguments: [null, "location"]).then((value) async {
           if (value is bool) {
             if (value == true) {
@@ -18,7 +22,7 @@ class DeliveryAddressWidget extends StatelessWidget {
                   .getHomeScreenApiProvider(context: context, params: params);
             }
           }
-        });
+        });*/
       },
       child: ListTile(
         contentPadding: EdgeInsetsDirectional.zero,

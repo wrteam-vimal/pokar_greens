@@ -32,7 +32,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace "com.wrteam.egrocer"
+    namespace "com.pokargreens.customer"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -48,9 +48,9 @@ android {
     }
 
     defaultConfig {
-        namespace "com.wrteam.egrocer"
+        namespace "com.pokargreens.customer"
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.wrteam.egrocer"
+        applicationId "com.pokargreens.customer"
         // You can update the following values to match your application needs.
         // For more information, see: https://docs.flutter.dev/deployment/android#reviewing-the-gradle-build-configuration.
         compileSdkVersion 34
