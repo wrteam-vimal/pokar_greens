@@ -185,6 +185,7 @@ class _ConfirmLocationState extends State<ConfirmLocation> {
                       Expanded(
                           child: GestureDetector(
                         onTap: () async {
+                          print('bottomsheet open');
                           Prediction? p = await PlacesAutocomplete.show(
                               context: context,
                               apiKey: Constant.googleApiKey,

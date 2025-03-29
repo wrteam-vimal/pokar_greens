@@ -350,6 +350,8 @@ class CheckoutProvider extends ChangeNotifier {
         if (isTimeSlotsEnabled) {
           params[ApiAndParams.deliveryTime] =
               "$selectedDate ${timeSlotsData?.timeSlots[selectedTime].title}";
+          params[ApiAndParams.timeSlotId] =
+              timeSlotsData!.timeSlots[selectedTime].id;
         } else {
           params[ApiAndParams.deliveryTime] = "N/A";
         }

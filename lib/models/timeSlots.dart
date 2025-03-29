@@ -67,6 +67,52 @@ class TimeSlots {
     required this.toTime,
     required this.lastOrderTime,
     required this.status,
+    this.freeDelivery, // Nullable String
+  });
+
+  late final String id;
+  late final String title;
+  late final String fromTime;
+  late final String toTime;
+  late final String lastOrderTime;
+  late final String status;
+  late final String? freeDelivery; // Keeping it as a String to match JSON format
+
+  TimeSlots.fromJson(Map<String, dynamic> json) {
+    id = json['id'].toString();
+    title = json['title'].toString();
+    fromTime = json['from_time'].toString();
+    toTime = json['to_time'].toString();
+    lastOrderTime = json['last_order_time'].toString();
+    status = json['status'].toString();
+
+    // Keep freeDelivery as String ("1", "0", or null)
+    freeDelivery = json['free_delivery']?.toString();
+  }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'from_time': fromTime,
+      'to_time': toTime,
+      'last_order_time': lastOrderTime,
+      'status': status,
+      'free_delivery': freeDelivery, // Already a String, so no conversion needed
+    };
+  }
+}
+
+
+
+/*class TimeSlots {
+  TimeSlots({
+    required this.id,
+    required this.title,
+    required this.fromTime,
+    required this.toTime,
+    required this.lastOrderTime,
+    required this.status,
   });
 
   late final String id;
@@ -95,4 +141,4 @@ class TimeSlots {
     itemData['status'] = status;
     return itemData;
   }
-}
+}*/

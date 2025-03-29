@@ -90,6 +90,8 @@ Future sendApiRequest(
       headersData["Authorization"] = "Bearer $token";
     }
 
+    print("get token***$token");
+
     headersData["x-access-key"] = "903361";
 
     String mainUrl =
@@ -154,11 +156,13 @@ Future sendApiMultiPartRequest(
 
     String token = Constant.session.getData(SessionManager.keyToken);
 
+
     String mainUrl =
         apiName.contains("http") ? apiName : "${Constant.baseUrl}$apiName";
 
     headersData["Authorization"] = "Bearer $token";
     headersData["x-access-key"] = "903361";
+
     var request = http.MultipartRequest('POST', Uri.parse(mainUrl));
 
     request.fields.addAll(params);
@@ -540,6 +544,93 @@ String getTranslatedValue(BuildContext context, String jsonKey) {
       context.read<LanguageProvider>().currentLocalOfflineLanguage[jsonKey] ??
       jsonKey;
 }
+
+/*Future openDeliveryRatingDialog(
+    {required Order order, required BuildContext context}) {
+  return showModalBottomSheet(
+    context: context,
+    isScrollControlled: true,
+    constraints: BoxConstraints(maxHeight: context.height * 0.7),
+    shape: DesignConfig.setRoundedBorderSpecific(20, istop: true),
+    backgroundColor: Theme.of(context).cardColor,
+    builder: (BuildContext context) {
+      return Padding(
+        padding: EdgeInsets.only(
+          bottom: MediaQuery.of(context).viewInsets.bottom,
+        ),
+        child: Container(
+          constraints: BoxConstraints(
+            minHeight: context.height * 0.5,
+          ),
+          padding: EdgeInsetsDirectional.only(
+              start: Constant.size15,
+              end: Constant.size15,
+              top: Constant.size15,
+              bottom: Constant.size15),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                child: Row(
+                  children: [
+                    GestureDetector(
+                      onTap: () => Navigator.pop(context),
+                      child: Padding(
+                        padding: EdgeInsets.all(10),
+                        child: defaultImg(
+                          image: "ic_arrow_back",
+                          iconColor: ColorsRes.mainTextColor,
+                          height: 15,
+                          width: 15,
+                        ),
+                      ),
+                    ),
+                    CustomTextLabel(
+                      jsonKey: "delivery_rating",
+                      softWrap: true,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium!.merge(
+                        TextStyle(
+                          letterSpacing: 0.5,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w400,
+                          color: ColorsRes.mainTextColor,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.all(10),
+                      child: getSizedBox(
+                        height: 15,
+                        width: 15,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                child: MultiProvider(
+                  providers: [
+                    ChangeNotifierProvider<RatingListProvider>(
+                      create: (BuildContext context) {
+                        return RatingListProvider();
+                      },
+                    )
+                  ],
+                  child: SubmitRatingWidget(
+                    size: 100,
+                    order: order,
+                    itemIndex: index,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    },
+  );
+}*/
 
 Future openRatingDialog(
     {required Order order, required int index, required BuildContext context}) {

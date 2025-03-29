@@ -3,6 +3,35 @@ import 'package:project/helper/utils/generalImports.dart';
 class GetTimeSlots extends StatelessWidget {
   const GetTimeSlots({super.key});
 
+  Future<void> getOrderCharges(
+      BuildContext context, String? freeDelivery) async {
+    Map<String, String> params = {
+      ApiAndParams.latitude: context
+              .read<CheckoutProvider>()
+              .selectedAddress
+              ?.latitude
+              ?.toString() ??
+          Constant.session.getData(SessionManager.keyLatitude),
+      ApiAndParams.longitude: context
+              .read<CheckoutProvider>()
+              .selectedAddress
+              ?.longitude
+              ?.toString() ??
+          Constant.session.getData(SessionManager.keyLongitude),
+      ApiAndParams.isCheckout: "1",
+      if (freeDelivery != null) ApiAndParams.freeDelivery: freeDelivery
+    };
+
+    if (Constant.selectedPromoCodeId != "0") {
+      params[ApiAndParams.promoCodeId] = Constant.selectedPromoCodeId;
+    }
+
+    await context.read<CheckoutProvider>().getOrderChargesProvider(
+          context: context,
+          params: params,
+        );
+  }
+
   @override
   Widget build(BuildContext context) {
     List lblMonthsNames = [
@@ -306,40 +335,119 @@ class GetTimeSlots extends StatelessWidget {
                                             .length ==
                                         index + 1
                                     ? Colors.transparent
-                                    : ColorsRes.grey.withValues(alpha:0.1),
+                                    : ColorsRes.grey.withValues(alpha: 0.1),
                               ),
                             ),
                           ),
-                          child: Row(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            // Ensures no extra space is taken
                             children: [
-                              CustomTextLabel(
-                                text: context
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                // Aligns items properly
+                                children: [
+                                  CustomTextLabel(
+                                    text: context
+                                            .read<CheckoutProvider>()
+                                            .timeSlotsData
+                                            ?.timeSlots[index]
+                                            .title ??
+                                        "",
+                                    style: TextStyle(
+                                      color: ColorsRes.mainTextColor,
+                                    ),
+                                  ),
+                                  const Spacer(),
+                                  CustomRadio(
+                                    visualDensity: VisualDensity.compact,
+                                    materialTapTargetSize:
+                                        MaterialTapTargetSize.shrinkWrap,
+                                    inactiveColor: ColorsRes.mainTextColor,
+                                    value: context
                                         .read<CheckoutProvider>()
-                                        .timeSlotsData
-                                        ?.timeSlots[index]
-                                        .title ??
-                                    "",
-                                style: TextStyle(
-                                  color: ColorsRes.mainTextColor,
-                                ),
+                                        .selectedTime,
+                                    groupValue: index,
+                                    activeColor: ColorsRes.appColor,
+                                    onChanged: (value) {
+                                      context
+                                          .read<CheckoutProvider>()
+                                          .setSelectedTime(index);
+
+                                      getOrderCharges(
+                                          context,
+                                          context
+                                              .read<CheckoutProvider>()
+                                              .timeSlotsData!
+                                              .timeSlots[index]
+                                              .freeDelivery);
+                                      /*  if (context
+                                          .read<CheckoutProvider>()
+                                          .selectedTime ==
+                                          index &&
+                                          context
+                                              .read<CheckoutProvider>()
+                                              .timeSlotsData
+                                              ?.timeSlots[index]
+                                              .freeDelivery ==
+                                              "1") {
+                                        */ /*context
+                                            .read<CheckoutProvider>()
+                                            .totalAmount = context
+                                                .read<CheckoutProvider>()
+                                                .totalAmount -
+                                            context
+                                                .read<CheckoutProvider>()
+                                                .deliveryCharge;
+                                        context
+                                            .read<CheckoutProvider>()
+                                            .deliveryCharge = 0;*/ /*
+                                      } else {
+                                        */ /*context
+                                            .read<CheckoutProvider>()
+                                            .totalAmount = context
+                                                .read<CheckoutProvider>()
+                                                .totalAmount +
+                                            context
+                                                .read<CheckoutProvider>()
+                                                .deliveryCharge;
+
+                                        context
+                                                .read<CheckoutProvider>()
+                                                .deliveryCharge =
+                                            double.parse(context
+                                                    .read<CheckoutProvider>()
+                                                    .deliveryChargeData
+                                                    ?.deliveryCharge
+                                                    ?.totalDeliveryCharge ??
+                                                "0");*/ /*
+                                      }*/
+                                    },
+                                  ),
+                                ],
                               ),
-                              const Spacer(),
-                              CustomRadio(
-                                visualDensity: VisualDensity.compact,
-                                materialTapTargetSize:
-                                    MaterialTapTargetSize.shrinkWrap,
-                                inactiveColor: ColorsRes.mainTextColor,
-                                value: context
-                                    .read<CheckoutProvider>()
-                                    .selectedTime,
-                                groupValue: index,
-                                activeColor: ColorsRes.appColor,
-                                onChanged: (value) {
+                              if (context
+                                          .read<CheckoutProvider>()
+                                          .selectedTime ==
+                                      index &&
                                   context
-                                      .read<CheckoutProvider>()
-                                      .setSelectedTime(index);
-                                },
-                              ),
+                                          .read<CheckoutProvider>()
+                                          .timeSlotsData
+                                          ?.timeSlots[index]
+                                          .freeDelivery ==
+                                      "1")
+                                Padding(
+                                  padding: EdgeInsets.only(bottom: 5),
+                                  // Reduce spacing
+                                  child: CustomTextLabel(
+                                    text: getTranslatedValue(
+                                        context, "eligible_for_free_delivery"),
+                                    style: TextStyle(
+                                      color: ColorsRes.appColor,
+                                    ),
+                                  ),
+                                ),
                             ],
                           ),
                         ),

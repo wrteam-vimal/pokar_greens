@@ -10,6 +10,12 @@ void main() async {
 
   // Initialize Firebase
   await Firebase.initializeApp();
+  //FirebaseMessaging.onBackgroundMessage(LocalNotificationService.firebaseBackgroundHandler);
+
+/*  LocalNotificationService.init(context);
+  FirebaseMessaging.onBackgroundMessage(LocalNotificationService.firebaseBackgroundHandler);
+  LocalNotificationService.foregroundNotificationListener();
+  LocalNotificationService.handleTerminatedState();*/
 
   // Initialize shared preferences
   prefs = await SharedPreferences.getInstance();
@@ -74,6 +80,9 @@ void main() async {
         ),
         ChangeNotifierProvider<AppSettingsProvider>(
           create: (context) => AppSettingsProvider(),
+        ),
+        ChangeNotifierProvider<AddressProvider>(
+          create: (context) => AddressProvider(),
         ),
       ],
       child: MyApp(),

@@ -29,7 +29,20 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                   Constant.session.getData(SessionManager.keyLatitude),
               ApiAndParams.longitude: selectedAddress?.longitude?.toString() ??
                   Constant.session.getData(SessionManager.keyLongitude),
-              ApiAndParams.isCheckout: "1"
+              ApiAndParams.isCheckout: "1",
+              if (context.read<CheckoutProvider>().timeSlotsData != null)
+                if (context
+                        .read<CheckoutProvider>()
+                        .timeSlotsData!
+                        .timeSlots[
+                            context.read<CheckoutProvider>().selectedTime]
+                        .freeDelivery !=
+                    null)
+                  ApiAndParams.freeDelivery: context
+                      .read<CheckoutProvider>()
+                      .timeSlotsData!
+                      .timeSlots[context.read<CheckoutProvider>().selectedTime]
+                      .freeDelivery!
             };
 
             if (Constant.selectedPromoCodeId != "0") {

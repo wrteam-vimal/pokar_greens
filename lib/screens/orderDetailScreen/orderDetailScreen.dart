@@ -87,6 +87,8 @@ class _OrderDetailScreenState extends State<OrderDetailScreen> {
                         order: order,
                         from: widget.from,
                       ),
+                      if(order.deliveryBoyId!="0")
+                      DeliveryBoyRatingWidget(order: order,),
                       // Billing details container
                       OrderBillingDetailsWidget(order: order),
                     ],

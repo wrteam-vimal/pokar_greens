@@ -50,6 +50,7 @@ class _SplashScreenState
 
     Future.delayed(Duration.zero).then(
       (value) async {
+        //await LocalNotificationService.requestPermission();
         await LocalAwesomeNotification().requestNotificationPermission(context);
 
         callAllApis();

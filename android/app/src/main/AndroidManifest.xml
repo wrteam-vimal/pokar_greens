@@ -19,6 +19,7 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
@@ -52,6 +53,8 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDv4wCwczMMTsbLqXvftfz6NBRgzG5Z6sk" />
+
+        <receiver android:name="com.dexterous.flutterlocalnotifications.receivers.NotificationReceiver" android:exported="true"/>
 
         <activity
             android:name=".HomeMainScreen"

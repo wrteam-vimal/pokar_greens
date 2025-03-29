@@ -47,6 +47,7 @@ const String walletRechargeScreen = 'walletRechargeScreen';
 const String ratingImageViewScreen = 'ratingImageViewScreen';
 const String barCodeScanner = 'barCodeScanner';
 const String selectLocationAddress = 'selectLocationAddress';
+const String deliveryBoyRatingScreen = 'deliveryBoyRatingScreen';
 
 String currentRoute = splashScreen;
 
@@ -110,6 +111,23 @@ class RouteGenerator {
             from: firebaseArguments[4] as String?,
           ),
         );
+
+      case deliveryBoyRatingScreen:
+        List<dynamic> arguments = settings.arguments as List<dynamic>;
+        return CupertinoPageRoute(
+            builder: (_) => MultiProvider(
+                  providers: [
+                    ChangeNotifierProvider(
+                      create: (context) => RatingReasonProvider(),
+                    ),
+                    ChangeNotifierProvider(
+                      create: (context) => DeliveryBoyRatingProvider(),
+                    ),
+                  ],
+                  child: DeliveryBoyRatingScreen(
+                    order: arguments[0] as Order,
+                  ),
+                ));
 
       case webViewScreen:
         return CupertinoPageRoute(

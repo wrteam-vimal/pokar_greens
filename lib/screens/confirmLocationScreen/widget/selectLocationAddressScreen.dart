@@ -69,6 +69,7 @@ class _SelectLocationAddressScreenState
   Widget savedAddress() {
     return Consumer<AddressProvider>(
       builder: (context, addressProvider, child) {
+        print("addressProvider11*****${addressProvider.addressState}");
         return Stack(
           children: [
             setRefreshIndicator(
@@ -102,6 +103,39 @@ class _SelectLocationAddressScreenState
                                             address.longitude!)
                                         .then(
                                       (value) {
+                                        Constant.session.setData(
+                                            SessionManager.keyLongitude,
+                                            address.longitude!,
+                                            false);
+                                        Constant.session.setData(
+                                            SessionManager.keyLatitude,
+                                            address.latitude!,
+                                            false);
+                                        if (context
+                                            .read<CityByLatLongProvider>()
+                                            .isDeliverable) {
+                                          /* context
+                                              .read<HomeScreenProvider>()
+                                              .getHomeScreenApiProvider(context: context, params: params);
+
+                                           context
+                                              .read<ProductListProvider>()
+                                              .getProductListProvider(context: context, params: params);
+                                          context
+                                              .read<CartListProvider>()
+                                              .getAllCartItems(
+                                                  context: context);*/
+                                          Constant.session.setData(
+                                              SessionManager.keyAddress,
+                                              address.address.toString(),
+                                              true);
+                                          Navigator.of(context)
+                                              .pushNamedAndRemoveUntil(
+                                            mainHomeScreen,
+                                            (Route<dynamic> route) => false,
+                                          );
+
+                                          /*
                                         if (context
                                             .read<CityByLatLongProvider>()
                                             .isDeliverable) {
@@ -118,7 +152,7 @@ class _SelectLocationAddressScreenState
                                               .pushNamedAndRemoveUntil(
                                             mainHomeScreen,
                                             (Route<dynamic> route) => false,
-                                          );
+                                          );*/
                                         } else {
                                           showMessage(
                                               context,
@@ -286,8 +320,8 @@ class _SelectLocationAddressScreenState
   Future checkLocationDelivery(String latitude, String longitude) async {
     Map<String, dynamic> params = {};
 
-    params[ApiAndParams.longitude] = latitude;
-    params[ApiAndParams.latitude] = longitude;
+    params[ApiAndParams.longitude] = longitude;
+    params[ApiAndParams.latitude] = latitude;
 
     await context
         .read<CityByLatLongProvider>()

@@ -58,6 +58,8 @@ class ApiAndParams {
   static String apiUpdateFcmToken = "update_fcm_token";
   static String apiSystemLanguages = "system_languages";
   static String apiDeleteOrder = "delete_order";
+  static String apiRatingReasons = "rating_reasons";
+  static String apiRateDeliveryBoy = "rate_delivery_boy";
 
 //============ api params ============
 
@@ -77,6 +79,7 @@ class ApiAndParams {
   static String latitude = "latitude";
   static String longitude = "longitude";
   static String cityId = "city_id";
+  static String freeDelivery = "free_delivery";
   static String search = "search";
   static String total = "total";
   static String limit = "limit";
@@ -116,6 +119,7 @@ class ApiAndParams {
   static String cart = "cart";
   static String saveForLater = "save_for_later";
   static String amount = "amount";
+  static String timeSlotId = "time_slot_id";
 
   static String address = "address";
   static String landmark = "landmark";
@@ -147,6 +151,11 @@ class ApiAndParams {
   static String transactionId = "transaction_id";
   static String type = "type";
   static String requestFrom = "request_from";
+  static String success = "success";
+  static String deliveryBoyId = "delivery_boy_id";
+  static String rating = "rating";
+  static String reasonId = "reason_id";
+  static String comments = "comments";
 
 //login
   static String fcmToken = "fcm_token";

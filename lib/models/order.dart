@@ -36,9 +36,10 @@ class Order {
       this.items,
       this.date,
       this.createdAt,
-      this.status});
+      this.status,this.deliveryBoyId});
 
   String? id;
+  String? deliveryBoyId;
   List<List>? status;
   String? userId;
   String? transactionId;
@@ -84,6 +85,7 @@ class Order {
       userId: userId,
       transactionId: transactionId,
       otp: otp,
+      deliveryBoyId: deliveryBoyId,
       mobile: mobile,
       orderNote: orderNote,
       total: newTotal ?? total,
@@ -129,6 +131,7 @@ class Order {
     orderNote = json['order_note'].toString();
     total = json['total'].toString();
     deliveryCharge = json['delivery_charge'].toString();
+    deliveryBoyId = json['delivery_boy_id'].toString();
     taxAmount = json['tax_amount'].toString();
     taxPercentage = json['tax_percentage'].toString();
     walletBalance = json['wallet_balance'].toString();

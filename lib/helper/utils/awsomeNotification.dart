@@ -431,3 +431,204 @@ class LocalAwesomeNotification {
     }
   }
 }
+
+/*import 'package:project/helper/utils/generalImports.dart';
+
+import 'dart:math';
+import 'dart:async';
+import 'package:flutter/material.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+class LocalNotificationService {
+  static final FlutterLocalNotificationsPlugin notificationsPlugin =
+      FlutterLocalNotificationsPlugin();
+  static final FirebaseMessaging messagingInstance = FirebaseMessaging.instance;
+  static final LocalNotificationService localNotification =
+      LocalNotificationService();
+
+  static StreamSubscription<RemoteMessage>? foregroundStream;
+  static StreamSubscription<RemoteMessage>? onMessageOpen;
+
+  /// **Initialize the Notification Service**
+  static Future<void> init(BuildContext context) async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+
+    const InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
+
+    await notificationsPlugin.initialize(
+      initializationSettings,
+      onDidReceiveNotificationResponse: (NotificationResponse response) {
+        _handleNotificationNavigation(response.payload);
+      },
+    );
+
+    await requestPermission();
+    await registerListeners(context);
+  }
+
+  /// **Request Permission for Notifications**
+  static Future<void> requestPermission() async {
+    NotificationSettings settings = await messagingInstance.requestPermission(
+      alert: true,
+      badge: true,
+      sound: true,
+    );
+    if (settings.authorizationStatus == AuthorizationStatus.denied) {
+      debugPrint("User denied notification permissions");
+    }
+  }
+
+  /// **Create a Notification**
+  static Future<void> createNotification({
+    required RemoteMessage data,
+  }) async {
+    const AndroidNotificationDetails androidPlatformChannelSpecifics =
+        AndroidNotificationDetails(
+      'basic_notifications',
+      'Basic Notifications',
+      channelDescription: 'Notification channel for basic notifications',
+      importance: Importance.high,
+      priority: Priority.high,
+      playSound: true,
+    );
+
+    const NotificationDetails platformChannelSpecifics =
+        NotificationDetails(android: androidPlatformChannelSpecifics);
+
+    await notificationsPlugin.show(
+      Random().nextInt(5000),
+      data.notification?.title ?? "New Notification",
+      data.notification?.body ?? "You have a new message",
+      platformChannelSpecifics,
+      payload: data.data['id'],
+    );
+  }
+
+  /// **Register Firebase Messaging Listeners**
+  static Future<void> registerListeners(BuildContext context) async {
+    foregroundStream =
+        FirebaseMessaging.onMessage.listen((RemoteMessage message) {
+      createNotification(data: message);
+    });
+
+    onMessageOpen =
+        FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
+      _handleNotificationNavigation(message.data['id']);
+    });
+
+    // Handle when the app is opened from a terminated state
+    RemoteMessage? initialMessage = await messagingInstance.getInitialMessage();
+    if (initialMessage != null) {
+      _handleNotificationNavigation(initialMessage.data);
+    }
+  }
+
+  /// **Handle Navigation When Notification is Clicked**
+  static void _handleNotificationNavigation(var payload) {
+    if (payload == null || navigatorKey.currentContext == null) return;
+
+    String? notificationType = payload["type"];
+    String? notificationTypeId = payload["id"];
+
+    Future.delayed(
+      Duration.zero,
+      () {
+        if (notificationType == "default" || notificationType == "user") {
+          if (currentRoute != notificationListScreen) {
+            Navigator.pushNamed(
+              navigatorKey.currentContext!,
+              notificationListScreen,
+            );
+          }
+        } else if (notificationType == "category") {
+          Navigator.pushNamed(
+            navigatorKey.currentContext!,
+            productListScreen,
+            arguments: [
+              "category",
+              notificationTypeId,
+              getTranslatedValue(navigatorKey.currentContext!, "app_name")
+            ],
+          );
+        } else if (notificationType == "product") {
+          Navigator.pushNamed(
+            navigatorKey.currentContext!,
+            productDetailScreen,
+            arguments: [
+              notificationTypeId,
+              getTranslatedValue(navigatorKey.currentContext!, "app_name"),
+              null
+            ],
+          );
+        } else if (notificationType == "url") {
+          launchUrl(
+            Uri.parse(notificationTypeId ?? ""),
+            mode: LaunchMode.externalApplication,
+          );
+        }
+      },
+    );
+  }
+
+  /// **Dispose Listeners to Prevent Memory Leaks**
+  static Future<void> disposeListeners() async {
+    await onMessageOpen?.cancel();
+    await foregroundStream?.cancel();
+  }
+
+  /// **Handle Firebase Background Notifications**
+  @pragma('vm:entry-point')
+  static Future<void> firebaseBackgroundHandler(RemoteMessage message) async {
+    await _initializeNotifications();
+    if (message.notification != null) {
+      await showNotification(
+        title: message.notification!.title ?? "New Notification",
+        body: message.notification!.body ?? "",
+        payload: message.data["payload"],
+      );
+    }
+  }
+
+  /// **Show a Simple Notification**
+  static Future<void> showNotification({
+    required String title,
+    required String body,
+    String? payload,
+  }) async {
+    const AndroidNotificationDetails androidDetails =
+        AndroidNotificationDetails(
+      'basic_notifications',
+      'Basic Notifications',
+      importance: Importance.high,
+      priority: Priority.high,
+      playSound: true,
+    );
+
+    const NotificationDetails details =
+        NotificationDetails(android: androidDetails);
+
+    await notificationsPlugin.show(
+      Random().nextInt(5000),
+      title,
+      body,
+      details,
+      payload: payload,
+    );
+  }
+
+  /// **Ensure Local Notification is Initialized for Background Handling**
+  static Future<void> _initializeNotifications() async {
+    const AndroidInitializationSettings initializationSettingsAndroid =
+        AndroidInitializationSettings('@mipmap/ic_launcher');
+
+    const InitializationSettings initializationSettings =
+        InitializationSettings(android: initializationSettingsAndroid);
+
+    await notificationsPlugin.initialize(initializationSettings);
+  }
+}*/
+

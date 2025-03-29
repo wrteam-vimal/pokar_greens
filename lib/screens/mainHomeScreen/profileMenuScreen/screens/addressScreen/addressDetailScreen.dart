@@ -122,7 +122,7 @@ class _AddressDetailScreenState extends State<AddressDetailScreen> {
                     start: 0,
                     bottom: 0,
                     child: Container(
-                        color: Colors.black.withValues(alpha:0.2),
+                        color: Colors.black.withValues(alpha: 0.2),
                         child:
                             const Center(child: CircularProgressIndicator())),
                   )
@@ -229,6 +229,7 @@ class _AddressDetailScreenState extends State<AddressDetailScreen> {
             ),
             getSizedBox(height: Constant.size10),
             editBoxWidget(
+                isReadOnly: true,
                 context,
                 edtAddress,
                 emptyValidation,

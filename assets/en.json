@@ -504,6 +504,24 @@
   "is_from_disabled_seller": "Some items are may not available!",
   "choose_location": "Choose location",
   "add_address": "Add Address",
-  "saved_address": "SAVED ADDRESS"
-
+  "saved_address": "SAVED ADDRESS",
+  "location_permission_off":"Location permission is off",
+  "enable_location_permission_delivery_experience": "Enable your location permission for a better delivery experience",
+  "enable_location_permission": "Enable location permission",
+  "search_location_manually": "Search location manually",
+  "please_enable_location_services_manually": "Please enable location services manually in your device settings.",
+  "delivery_boy": "Delivery Boy",
+  "rate_delivery": "Rate Delivery",
+  "eligible_for_free_delivery": "[Eligible for free delivery]",
+  "please_provide_star_rating": "Please provide a star rating.",
+  "please_select_rating_reason": "Please select a rating reason.",
+  "how_was_your_experience": "How was your experience?",
+  "rate_your_delivery": "Rate your delivery!",
+  "anything_to_add": "Anything to add?",
+  "share_your_delivery_experience": "Share your delivery experience",
+  "submit": "Submit",
+  "device_location_not_enabled": "Device location not enabled",
+  "enable_your_device_location": "Enable your device location for a better delivery",
+  "enable": "Enable",
+  "select_saved_address": "Select a saved address"
 }

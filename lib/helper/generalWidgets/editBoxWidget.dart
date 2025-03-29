@@ -11,6 +11,7 @@ Widget editBoxWidget(
   Widget? leadingIcon,
   bool? isLastField,
   bool? isEditable = true,
+  bool? isReadOnly,
   List<TextInputFormatter>? inputFormatters,
   TextInputAction? optionalTextInputAction,
   int? minLines,
@@ -25,6 +26,7 @@ Widget editBoxWidget(
     children: [
       TextFormField(
         enabled: isEditable,
+        readOnly: isReadOnly ?? false,
         style: TextStyle(
           color: ColorsRes.mainTextColor,
         ),
@@ -63,7 +65,7 @@ Widget editBoxWidget(
               Radius.circular(8),
             ),
             borderSide: BorderSide(
-              color: ColorsRes.subTitleMainTextColor.withValues(alpha:0.5),
+              color: ColorsRes.subTitleMainTextColor.withValues(alpha: 0.5),
               width: 1,
               style: BorderStyle.solid,
               strokeAlign: BorderSide.strokeAlignCenter,
@@ -96,7 +98,7 @@ Widget editBoxWidget(
               Radius.circular(8),
             ),
             borderSide: BorderSide(
-              color: ColorsRes.subTitleMainTextColor.withValues(alpha:0.5),
+              color: ColorsRes.subTitleMainTextColor.withValues(alpha: 0.5),
               width: 1,
               style: BorderStyle.solid,
               strokeAlign: BorderSide.strokeAlignCenter,
