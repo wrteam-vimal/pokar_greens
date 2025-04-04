@@ -57,6 +57,11 @@ class _EditProfileState extends State<EditProfile> {
         isEditable = widget.loginParams?[ApiAndParams.type] == "phone";
       }
 
+      print(
+          "phone data***${Constant.session.getData(SessionManager.keyPhone)}");
+      print("phone data11***${widget.loginParams?[ApiAndParams.mobile]}");
+      print("header***${widget.from}");
+
       tempName = widget.from == "header"
           ? Constant.session.getData(SessionManager.keyUserName)
           : widget.loginParams?[ApiAndParams.name] ?? "";
@@ -679,7 +684,8 @@ class _EditProfileState extends State<EditProfile> {
               decoration: InputDecoration(
                 border: InputBorder.none,
                 isDense: true,
-                hintStyle: TextStyle(color: ColorsRes.grey.withValues(alpha:0.5)),
+                hintStyle:
+                    TextStyle(color: ColorsRes.grey.withValues(alpha: 0.5)),
                 hintText: "9999999999",
               ),
             ),
@@ -926,8 +932,7 @@ class _EditProfileState extends State<EditProfile> {
                                               if (value.isGranted) {
                                                 ImagePicker()
                                                     .pickImage(
-                                                  source:
-                                                      ip.ImageSource.camera,
+                                                  source: ip.ImageSource.camera,
                                                   preferredCameraDevice:
                                                       CameraDevice.front,
                                                   maxHeight: 512,
@@ -987,7 +992,7 @@ class _EditProfileState extends State<EditProfile> {
                                                 },
                                               );
                                             }
-                                                                                    },
+                                          },
                                         );
                                       },
                                       icon: Icon(

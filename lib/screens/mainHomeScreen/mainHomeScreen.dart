@@ -58,7 +58,7 @@ class HomeMainScreenState extends State<HomeMainScreen>
       Duration.zero,
       () async {
         context.read<AppSettingsProvider>().getAppSettingsProvider(context);
-
+        showLocationBottomSheet(context);
         await LocalAwesomeNotification().init(context);
         //LocalNotificationService.init(context);
 /*        LocalNotificationService.foregroundNotificationListener();

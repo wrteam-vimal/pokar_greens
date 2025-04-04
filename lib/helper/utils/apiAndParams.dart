@@ -60,6 +60,8 @@ class ApiAndParams {
   static String apiDeleteOrder = "delete_order";
   static String apiRatingReasons = "rating_reasons";
   static String apiRateDeliveryBoy = "rate_delivery_boy";
+  static String apiComplaints = "complaints";
+  static String apiGetComplaints = "get_complaint";
 
 //============ api params ============
 
@@ -156,6 +158,8 @@ class ApiAndParams {
   static String rating = "rating";
   static String reasonId = "reason_id";
   static String comments = "comments";
+  static String imagesArray = "images[]";
+  static String videosArray = "videos[]";
 
 //login
   static String fcmToken = "fcm_token";

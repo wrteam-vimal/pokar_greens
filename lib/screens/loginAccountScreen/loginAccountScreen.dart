@@ -505,7 +505,7 @@ class _LoginAccountState extends State<LoginAccountScreen> {
               border: InputBorder.none,
               isDense: true,
               hintStyle: TextStyle(color: Colors.grey[300]),
-              hintText: "9999999999",
+              hintText: "",
             ),
           ),
         )
